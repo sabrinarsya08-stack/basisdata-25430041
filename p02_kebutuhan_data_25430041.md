@@ -81,9 +81,27 @@ Batas Jatuh Tempo  : 13-10-2026      [-> data batas peminjaman]
 | Elemen | Arti | Aturan | Penanggung Jawab |
 |---|---|---|---|
 | nim_anggota | NIM mahasiswa | Unik, 10 digit | Kepala Perpus |
-| no_hp | Nomor kontak | Pribadi, akses terbatas | Kepala Perpus |
-| no_slip | Nomor transaksi | Unik | Petugas Sirkulasi |
-| denda | Nominal denda | Angka >= 0 | Petugas Sirkulasi |
+| nama_anggota | Nama lengkap anggota | Wajib diisi | Kepala Perpus |
+| no_hp_anggota | Nomor kontak | Pribadi, akses terbatas | Kepala Perpus |
+| status_aktif | Status keanggotaan | 'aktif' atau 'nonaktif' | Kepala Perpus |
+| id_petugas | ID unik petugas | Unik | Kepala Perpus |
+| nama_petugas | Nama lengkap petugas | Wajib diisi | Kepala Perpus |
+| peran_petugas | Peran petugas | 'admin', 'sirkulasi', 'pustakawan' | Kepala Perpus |
+| isbn | Nomor ISBN buku | Unik per judul buku | Pustakawan |
+| judul_buku | Judul buku | Wajib diisi | Pustakawan |
+| pengarang | Nama pengarang/penulis | Wajib diisi | Pustakawan |
+| kategori_buku | Kategori/genre | Wajib diisi | Pustakawan |
+| kode_barcode | Kode fisik eksemplar buku | Unik per fisik buku | Pustakawan |
+| kondisi_buku | Kondisi fisik buku | 'baik', 'rusak', 'hilang' | Pustakawan |
+| status_pinjam | Ketersediaan di rak | 'tersedia', 'dipinjam' | Petugas Sirkulasi |
+| no_slip_pinjam | Nomor transaksi pinjam | Unik | Petugas Sirkulasi |
+| tgl_pinjam | Waktu buku dipinjam | Format Datetime | Petugas Sirkulasi |
+| batas_kembali | Jatuh tempo peminjaman | Tgl pinjam + 7 hari | Petugas Sirkulasi |
+| tgl_dikembalikan | Waktu buku dikembalikan | Format Datetime | Petugas Sirkulasi |
+| nominal_denda | Nominal denda per buku | Angka >= 0 | Petugas Sirkulasi |
+| id_pemasok | ID unik pemasok | Unik | Pustakawan |
+| nama_pemasok | Nama penerbit/pemasok | Wajib diisi | Pustakawan |
+| kontak_pemasok | Info kontak penerbit | Boleh kosong | Pustakawan |
 
 ## 9. Kebutuhan non-fungsional data
 * **Parameter P:** P = (41 mod 9) + 1 = 5 + 1 = 6. (Batas pinjam 8 buku, Denda Rp6.000/hari).
