@@ -36,7 +36,7 @@ Daftar Pinjaman:
 -------------------------------------------------------------------
 Total Buku Dipinjam: 2               [-> nilai turunan (dihitung dari baris)]
 Batas Jatuh Tempo  : 13-10-2026      [-> data batas peminjaman]
--------------------------------------------------------------------
+-------------------------------------------------------------------```
 ## 4. Entitas kandidat dan elemen data
 1. **Anggota:** NIM, nama, no_hp, status_aktif
 2. **Petugas:** ID_petugas, nama, peran
