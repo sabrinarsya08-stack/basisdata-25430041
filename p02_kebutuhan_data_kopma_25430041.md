@@ -13,9 +13,9 @@ Kopma menjual alat tulis, makanan ringan, dan minuman di lingkungan kampus. Pemb
 | PB-05 | Menyusun laporan bulanan | Ketua koperasi | Awal bulan |
 
 ## 3. Dokumen sumber yang dianalisis
-- Nota Penjualan Kopma
-- Formulir Pendaftaran Anggota
-- Faktur Pemasok
+- Nota Penjualan Kopma.
+- Formulir Pendaftaran Anggota.
+- Faktur Pemasok.
 
 ## 4. Entitas kandidat dan elemen data
 - **Anggota:** nomor anggota, NIM, nama, program studi, nomor HP, status aktif, **poin_loyalitas (TAMBAHAN E.1)**.
