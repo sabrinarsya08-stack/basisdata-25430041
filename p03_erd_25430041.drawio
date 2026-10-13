@@ -1,50 +1,48 @@
-<mxfile host="app.diagrams.net" modified="2026-10-13T00:00:00.000Z" agent="Mozilla/5.0" version="21.0.0" etag="erd-perpus-clean" type="device">
-  <diagram name="ERD Perpustakaan Rapi" id="erd_perpus_clean">
+<mxfile host="app.diagrams.net" modified="2026-10-13T00:00:00.000Z" agent="Mozilla/5.0" version="21.0.0" etag="erd-perpus-exact-layout" type="device">
+  <diagram name="ERD Perpustakaan Persis" id="erd_perpus_exact_layout">
     <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         
-        <!-- Baris 1: Tabel Master Atas -->
-        <!-- Petugas -->
+        <!-- Tabel Petugas (Kiri Atas) -->
         <mxCell id="petugas" value="petugas&#xa;--------------------------------&#xa;PK id_petugas : SMALLINT&#xa;-- kode_petugas : CHAR(3)&#xa;-- nama_petugas : VARCHAR(100)&#xa;-- peran_petugas : ENUM" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#ffe6cc;" vertex="1" parent="1">
-          <mxGeometry x="60" y="80" width="210" height="130" as="geometry" />
+          <mxGeometry x="60" y="140" width="220" height="130" as="geometry" />
         </mxCell>
 
-        <!-- Anggota -->
-        <mxCell id="anggota" value="anggota&#xa;--------------------------------&#xa;PK id_anggota : INT&#xa;-- no_anggota : CHAR(6)&#xa;-- nim_anggota : CHAR(10)&#xa;-- nama_anggota : VARCHAR(100)&#xa;-- prodi_anggota : VARCHAR(60)&#xa;-- no_hp_anggota : VARCHAR(15)&#xa;-- status_anggota : ENUM&#xa;-- tgl_daftar_anggota : DATE" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#d5e8d4;" vertex="1" parent="1">
-          <mxGeometry x="310" y="60" width="220" height="170" as="geometry" />
+        <!-- Tabel Anggota (Tengah Atas - Warna Pink) -->
+        <mxCell id="anggota" value="anggota&#xa;--------------------------------&#xa;PK id_anggota : INT&#xa;-- no_anggota : CHAR(6)&#xa;-- nim_anggota : CHAR(10)&#xa;-- nama_anggota : VARCHAR(100)&#xa;-- prodi_anggota : VARCHAR(60)&#xa;-- no_hp_anggota : VARCHAR(15)&#xa;-- status_anggota : ENUM&#xa;-- tgl_daftar_anggota : DATE" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="240" height="190" as="geometry" />
         </mxCell>
 
-        <!-- Buku -->
+        <!-- Tabel Buku (Tengah Bawah - Warna Oranye) -->
         <mxCell id="buku" value="buku&#xa;--------------------------------&#xa;PK id_buku : INT&#xa;-- kode_buku : VARCHAR(10)&#xa;-- judul_buku : VARCHAR(100)&#xa;-- kategori_buku : ENUM&#xa;-- stok_buku : INT&#xa;-- stok_min_buku : INT" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#ffe6cc;" vertex="1" parent="1">
-          <mxGeometry x="570" y="80" width="210" height="150" as="geometry" />
+          <mxGeometry x="380" y="320" width="220" height="150" as="geometry" />
         </mxCell>
 
-        <!-- Penerbit -->
+        <!-- Tabel Penerbit (Kanan Atas - Warna Hijau) -->
         <mxCell id="penerbit" value="penerbit&#xa;--------------------------------&#xa;PK id_penerbit : INT&#xa;-- nama_penerbit : VARCHAR(100)&#xa;-- telepon_penerbit : VARCHAR(15)&#xa;-- alamat_penerbit : VARCHAR(200)" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#d5e8d4;" vertex="1" parent="1">
-          <mxGeometry x="840" y="80" width="220" height="130" as="geometry" />
+          <mxGeometry x="780" y="60" width="240" height="130" as="geometry" />
         </mxCell>
 
-        <!-- Baris 2: Tabel Transaksi & Asosiatif Bawah -->
-        <!-- Peminjaman -->
+        <!-- Tabel Peminjaman (Kiri Bawah - Warna Biru) -->
         <mxCell id="peminjaman" value="peminjaman&#xa;--------------------------------&#xa;PK id_peminjaman : INT&#xa;-- no_peminjaman : CHAR(12)&#xa;-- tgl_peminjaman : DATETIME&#xa;FK id_petugas : SMALLINT&#xa;FK id_anggota : INT&#xa;-- tgl_batas_kembali : DATE" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#dae8fc;" vertex="1" parent="1">
-          <mxGeometry x="180" y="340" width="220" height="150" as="geometry" />
+          <mxGeometry x="110" y="370" width="230" height="150" as="geometry" />
         </mxCell>
 
-        <!-- Detail Peminjaman -->
-        <mxCell id="detail_peminjaman" value="detail_peminjaman&#xa;--------------------------------&#xa;PK,FK id_peminjaman : INT&#xa;PK,FK id_buku : INT&#xa;-- qty_pinjam : SMALLINT&#xa;-- denda_keterlambatan : DECIMAL" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#e1d5e7;" vertex="1" parent="1">
-          <mxGeometry x="180" y="560" width="220" height="130" as="geometry" />
+        <!-- Tabel Detail Peminjaman (Kiri Bawah - Warna Ungu) -->
+        <mxCell id="detail_peminjaman" value="detail_peminjaman&#xa;--------------------------------&#xa;FK id_peminjaman : INT&#xa;FK id_buku : INT&#xa;-- qty_pinjam : SMALLINT&#xa;-- denda_keterlambatan : DECIMAL(12,2)" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="220" y="610" width="260" height="130" as="geometry" />
         </mxCell>
 
-        <!-- Pengadaan -->
-        <mxCell id="pengadaan" value="pengadaan&#xa;--------------------------------&#xa;PK id_pengadaan : INT&#xa;-- no_faktur_pengadaan : VARCHAR&#xa;-- tgl_pengadaan : DATE&#xa;FK id_penerbit : INT&#xa;-- status_pengadaan : ENUM" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#dae8fc;" vertex="1" parent="1">
-          <mxGeometry x="740" y="340" width="220" height="130" as="geometry" />
+        <!-- Tabel Pengadaan (Kanan Tengah - Warna Biru) -->
+        <mxCell id="pengadaan" value="pengadaan&#xa;--------------------------------&#xa;PK id_pengadaan : INT&#xa;-- no_faktur_pengadaan : VARCHAR(20)&#xa;-- tgl_pengadaan : DATE&#xa;FK id_penerbit : INT&#xa;-- status_pengadaan : ENUM" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="640" y="270" width="240" height="130" as="geometry" />
         </mxCell>
 
-        <!-- Detail Pengadaan -->
-        <mxCell id="detail_pengadaan" value="detail_pengadaan&#xa;--------------------------------&#xa;PK,FK id_pengadaan : INT&#xa;PK,FK id_buku : INT&#xa;-- qty_pengadaan : INT&#xa;-- harga_beli_buku : DECIMAL" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#e1d5e7;" vertex="1" parent="1">
-          <mxGeometry x="740" y="560" width="220" height="130" as="geometry" />
+        <!-- Tabel Detail Pengadaan (Kanan Bawah - Warna Ungu) -->
+        <mxCell id="detail_pengadaan" value="detail_pengadaan&#xa;--------------------------------&#xa;FK id_pengadaan : INT&#xa;FK id_buku : INT&#xa;-- qty_pengadaan : INT&#xa;-- harga_beli_buku : DECIMAL(12,2)" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="580" y="580" width="260" height="130" as="geometry" />
         </mxCell>
 
       </root>
