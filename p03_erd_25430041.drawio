@@ -1,42 +1,74 @@
-<mxfile host="app.diagrams.net" modified="2026-10-13T00:00:00.000Z" agent="Mozilla/5.0" version="21.0.0" etag="erd-perpus-41" type="device">
-  <diagram name="ERD Perpustakaan 25430041" id="erd_perpus_41">
-    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <!-- Entitas Petugas -->
-        <mxCell id="petugas" value="petugas&#xa;--------------------------------&#xa;PK id_petugas : SMALLINT&#xa;-- kode_petugas : CHAR(3)&#xa;-- nama_petugas : VARCHAR(100)&#xa;-- peran_petugas : ENUM" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#ffe6cc;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="220" height="130" as="geometry" />
-        </mxCell>
-        <!-- Entitas Anggota -->
-        <mxCell id="anggota" value="anggota&#xa;--------------------------------&#xa;PK id_anggota : INT&#xa;-- no_anggota : CHAR(6)&#xa;-- nim_anggota : CHAR(10)&#xa;-- nama_anggota : VARCHAR(100)&#xa;-- prodi_anggota : VARCHAR(60)&#xa;-- no_hp_anggota : VARCHAR(15)&#xa;-- status_anggota : ENUM&#xa;-- tgl_daftar_anggota : DATE" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#d5e8d4;" vertex="1" parent="1">
-          <mxGeometry x="320" y="40" width="240" height="190" as="geometry" />
-        </mxCell>
-        <!-- Entitas Buku -->
-        <mxCell id="buku" value="buku&#xa;--------------------------------&#xa;PK id_buku : INT&#xa;-- kode_buku : VARCHAR(10)&#xa;-- judul_buku : VARCHAR(100)&#xa;-- kategori_buku : ENUM&#xa;-- stok_buku : INT&#xa;-- stok_min_buku : INT" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#ffe6cc;" vertex="1" parent="1">
-          <mxGeometry x="610" y="40" width="220" height="150" as="geometry" />
-        </mxCell>
-        <!-- Entitas Penerbit -->
-        <mxCell id="penerbit" value="penerbit&#xa;--------------------------------&#xa;PK id_penerbit : INT&#xa;-- nama_penerbit : VARCHAR(100)&#xa;-- telepon_penerbit : VARCHAR(15)&#xa;-- alamat_penerbit : VARCHAR(200)" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#d5e8d4;" vertex="1" parent="1">
-          <mxGeometry x="900" y="40" width="240" height="130" as="geometry" />
-        </mxCell>
-        <!-- Entitas Peminjaman -->
-        <mxCell id="peminjaman" value="peminjaman&#xa;--------------------------------&#xa;PK id_peminjaman : INT&#xa;-- no_peminjaman : CHAR(12)&#xa;-- tgl_peminjaman : DATETIME&#xa;FK id_petugas : SMALLINT&#xa;FK id_anggota : INT&#xa;-- tgl_batas_kembali : DATE" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#dae8fc;" vertex="1" parent="1">
-          <mxGeometry x="170" y="320" width="240" height="150" as="geometry" />
-        </mxCell>
-        <!-- Entitas Detail Peminjaman -->
-        <mxCell id="detail_peminjaman" value="detail_peminjaman&#xa;--------------------------------&#xa;PK,FK id_peminjaman : INT&#xa;PK,FK id_buku : INT&#xa;-- qty_pinjam : SMALLINT&#xa;-- denda_keterlambatan : DECIMAL" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#e1d5e7;" vertex="1" parent="1">
-          <mxGeometry x="500" y="320" width="250" height="130" as="geometry" />
-        </mxCell>
-        <!-- Entitas Pengadaan -->
-        <mxCell id="pengadaan" value="pengadaan&#xa;--------------------------------&#xa;PK id_pengadaan : INT&#xa;-- no_faktur_pengadaan : VARCHAR&#xa;-- tgl_pengadaan : DATE&#xa;FK id_penerbit : INT&#xa;-- status_pengadaan : ENUM" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#dae8fc;" vertex="1" parent="1">
-          <mxGeometry x="880" y="320" width="240" height="130" as="geometry" />
-        </mxCell>
-        <!-- Entitas Detail Pengadaan -->
-        <mxCell id="detail_pengadaan" value="detail_pengadaan&#xa;--------------------------------&#xa;PK,FK id_pengadaan : INT&#xa;PK,FK id_buku : INT&#xa;-- qty_pengadaan : INT&#xa;-- harga_beli_buku : DECIMAL" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=0;align=center;verticalAlign=top;strokeColor=inherit;fillColor=#e1d5e7;" vertex="1" parent="1">
-          <mxGeometry x="880" y="520" width="240" height="130" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-</mxfile>
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e8f4f8', 'primaryBorderColor': '#2b7a78', 'lineColor': '#17252a', 'textColor': '#17252a', 'fontFamily': 'Arial'}}}%%
+erDiagram
+    petugas ||--o{ peminjaman : melayani
+    anggota ||--o{ peminjaman : melakukan
+    peminjaman ||--|{ detail_peminjaman : berisi
+    buku ||--o{ detail_peminjaman : tercantum
+    penerbit ||--o{ pengadaan : menerima
+    pengadaan ||--|{ detail_pengadaan : berisi
+    buku ||--o{ detail_pengadaan : dibeli
+
+    petugas {
+        PK id_petugas "SMALLINT"
+        -- kode_petugas "CHAR(3)"
+        -- nama_petugas "VARCHAR(100)"
+        -- peran_petugas "ENUM"
+    }
+
+    anggota {
+        PK id_anggota "INT"
+        -- no_anggota "CHAR(6)"
+        -- nim_anggota "CHAR(10)"
+        -- nama_anggota "VARCHAR(100)"
+        -- prodi_anggota "VARCHAR(60)"
+        -- no_hp_anggota "VARCHAR(15)"
+        -- status_anggota "ENUM"
+        -- tgl_daftar_anggota "DATE"
+    }
+
+    penerbit {
+        PK id_penerbit "INT"
+        -- nama_penerbit "VARCHAR(100)"
+        -- telepon_penerbit "VARCHAR(15)"
+        -- alamat_penerbit "VARCHAR(200)"
+    }
+
+    buku {
+        PK id_buku "INT"
+        -- kode_buku "VARCHAR(10)"
+        -- judul_buku "VARCHAR(100)"
+        -- kategori_buku "ENUM"
+        -- stok_buku "INT"
+        -- stok_min_buku "INT"
+    }
+
+    peminjaman {
+        PK id_peminjaman "INT"
+        -- no_peminjaman "CHAR(12)"
+        -- tgl_peminjaman "DATETIME"
+        FK id_petugas "SMALLINT"
+        FK id_anggota "INT"
+        -- tgl_batas_kembali "DATE"
+    }
+
+    detail_peminjaman {
+        PK,FK id_peminjaman "INT"
+        PK,FK id_buku "INT"
+        -- qty_pinjam "SMALLINT"
+        -- denda_keterlambatan "DECIMAL(12,2)"
+    }
+
+    pengadaan {
+        PK id_pengadaan "INT"
+        -- no_faktur_pengadaan "VARCHAR(20)"
+        -- tgl_pengadaan "DATE"
+        FK id_penerbit "INT"
+        -- status_pengadaan "ENUM"
+    }
+
+    detail_pengadaan {
+        PK,FK id_pengadaan "INT"
+        PK,FK id_buku "INT"
+        -- qty_pengadaan "INT"
+        -- harga_beli_buku "DECIMAL(12,2)"
+    }
